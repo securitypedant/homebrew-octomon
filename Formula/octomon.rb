@@ -1,10 +1,10 @@
 class Octomon < Formula
-  desc "A btop-style terminal dashboard for network performance: latency, bandwidth, per-process usage, and Wi-Fi signal."
+  desc "Btop-style terminal network monitor: latency, bandwidth, and Wi-Fi signal"
   homepage "https://github.com/securitypedant/octomon"
-  version "0.1.1"
+  version "0.2.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/securitypedant/octomon/releases/download/v0.1.1/octomon-aarch64-apple-darwin.tar.xz"
-    sha256 "904220e852ae4c2195ff527257d1acce38dd7158e16858964825fd78a817201c"
+    url "https://github.com/securitypedant/octomon/releases/download/v0.2.0/octomon-aarch64-apple-darwin.tar.xz"
+    sha256 "02149404fa7b89fa6b17f31ef0ac46cb65f92307c0c2309b1efadf8b9e429c62"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
