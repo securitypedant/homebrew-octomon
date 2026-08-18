@@ -1,36 +1,34 @@
 class Octomon < Formula
   desc "Btop-style terminal network monitor: latency, bandwidth, and Wi-Fi signal"
   homepage "https://github.com/securitypedant/octomon"
-  version "0.5.2"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/securitypedant/octomon/releases/download/v0.5.2/octomon-aarch64-apple-darwin.tar.xz"
-      sha256 "0605d55fe40611cf5debd2c31aaa646193c82ef293634e4b02404376e1dd6c60"
-    end
+  version "0.5.3"
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/securitypedant/octomon/releases/download/v0.5.3/octomon-aarch64-apple-darwin.tar.xz"
+    sha256 "1bb65c121753fa0e118661c9981553dce69ab125821ca3a6bf6db0fa22b80ed8"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/securitypedant/octomon/releases/download/v0.5.2/octomon-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "57fc25443486c5fc11bf84fb9e0aaab243bb13dd42c8de8dfec25d7c8967b9b2"
+      url "https://github.com/securitypedant/octomon/releases/download/v0.5.3/octomon-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "8351182b332d056463da1e3206e72f292c56be740ae5b8f3d9c0ed21b777ea77"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/securitypedant/octomon/releases/download/v0.5.2/octomon-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "a18d8058fa06dc0ca3b95dfdd6fbb6c482344413e8201183d21353225d1ce71d"
+      url "https://github.com/securitypedant/octomon/releases/download/v0.5.3/octomon-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "328a3d81cee21e91d901a389d66e755a5a50ba4a979b5ae0f2b1949e92f10b75"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
-    "aarch64-pc-windows-gnu": {},
-    "aarch64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-pc-windows-gnu":             {},
+    "aarch64-unknown-linux-gnu":          {},
     "aarch64-unknown-linux-musl-dynamic": {},
-    "aarch64-unknown-linux-musl-static": {},
-    "x86_64-pc-windows-gnu": {},
-    "x86_64-unknown-linux-gnu": {},
-    "x86_64-unknown-linux-musl-dynamic": {},
-    "x86_64-unknown-linux-musl-static": {}
-  }
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
