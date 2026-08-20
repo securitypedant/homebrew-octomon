@@ -1,19 +1,19 @@
 class Octomon < Formula
   desc "Btop-style terminal network monitor: latency, bandwidth, and Wi-Fi signal"
   homepage "https://github.com/securitypedant/octomon"
-  version "0.6.1"
+  version "0.6.2"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/securitypedant/octomon/releases/download/v0.6.1/octomon-aarch64-apple-darwin.tar.xz"
-    sha256 "07b2fc4c8e9a96e5e7907519c1f6ebeb04962a8d1c3b9fc12d799c39f06b1bd7"
+    url "https://github.com/securitypedant/octomon/releases/download/v0.6.2/octomon-aarch64-apple-darwin.tar.xz"
+    sha256 "b11fbabf39196a9334cc87a44e39451f2f868b4c3246065827c4cf9eb052f58f"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/securitypedant/octomon/releases/download/v0.6.1/octomon-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "d3b161ab33ff632181ca406de0899a5f159833a2def47924d73518a781a64746"
+      url "https://github.com/securitypedant/octomon/releases/download/v0.6.2/octomon-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "01551c2cc697ae534a78860310e397c894ef98c144d9260d094bc677b4f5e790"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/securitypedant/octomon/releases/download/v0.6.1/octomon-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "61de62047a431d21c02c07f50995b195ef184c98f0db89d854d7b2917b075435"
+      url "https://github.com/securitypedant/octomon/releases/download/v0.6.2/octomon-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "bc505411431e5b4af4623a20b1337894bd62c087b940ae4986b7f7cf5d3ee490"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
